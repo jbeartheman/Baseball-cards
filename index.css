@@ -1,0 +1,20 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+figure {
+    margin: 2em;
+}
+
+figcaption{
+    color: white;
+    text-align: center;
+    background-color: rgba(22, 127, 161, 0.336);
+}
