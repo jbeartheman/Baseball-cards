@@ -13,8 +13,8 @@ const main = document.querySelector('main')
 })
 */
 
-for (let i = 0; i < 7; i++){
-    let figure = document.createElement('figure')
+for (let i = 0; i < 25; i++){
+    let figure = document.createElement('.card')
     let figImg = document.createElement('img')
     figImg.src = 'https://starwars-visualguide.com/assets/img/characters/' + (i + 1) + '.jpg'
     let figCaption = document.createElement('figcaption')
@@ -26,3 +26,8 @@ for (let i = 0; i < 7; i++){
     main.appendChild(figure)
     
 }
+
+var card = document.querySelector('.card');
+card.addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});
