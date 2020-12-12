@@ -11,16 +11,17 @@ async function getAPIData(url)  {
 // now, use the asynce getAPIdata function
 
 function loadPage(){
-    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then
-    async (data) => { 
+    getAPIData('https://pokeapi.co/api/v2/pokemon').then
+    (async (data) => { 
         for (const pokemon of data.results) {
             await getAPIData(pokemon.url).then((pokeData) => {
                 populatePokeCard(pokeData)
             })
             
         }
-    }
+    })
 }
+
 
 
 const pokeGrid = document.querySelector('.pokemonGrid')
