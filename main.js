@@ -11,7 +11,7 @@ async function getAPIData(url)  {
 // now, use the asynce getAPIdata function
 
 function loadPage(){
-    getAPIData('https://pokeapi.co/api/v2/pokemon').then
+    getAPIData('https://pokeapi.co/api/v2/pokemon?limit=25&offset=800').then
     (async (data) => { 
         for (const pokemon of data.results) {
             await getAPIData(pokemon.url).then((pokeData) => {
@@ -24,6 +24,19 @@ function loadPage(){
 
 
 const pokeGrid = document.querySelector('.pokemonGrid')
+const loadButton = document.querySelector('load')
+const newPokemonButton = document.querySelector('newPokemon')
+
+newPokemonButton.addEventListener('click', () => {
+    let pokeName = prompt('What is your new Pokemon Name?')
+    let newPokemon = new Pokemon(pokeName, 400, 200, ['stump', 'sleep', 'yeet'])
+    populatePokeCard(newPokemon)
+})
+
+loadButton.addEventListener('click', () => {
+    loadPage()
+    loadButton.disabled= true
+})
 
 function populatePokeCard(singlePokemon){
     let pokeScene = document.createElement('div')
@@ -57,16 +70,41 @@ function populateCardBack(pokemon){
     pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
     backLabel.textContent = `${pokemon.moves.length} moves`
+    backLabel.addEventListener('click', () => getMovesDetails(pokemon.moves))
     pokeBack.appendChild(backLabel)
     return pokeBack
 }
+
+function getMovesDetails(pokemonMoves) {
+    const nonNullMoves = pokemonMoves.filter(async (move) => {
+        if(!move.move.url) return
+        const moveData = await getAPIData (move.move.url)
+        if ((moveData.accuracy && moveData.power) !== null){
+            return moveData
+        }
+    })
+
+}
+   
 function getImageFileName(pokemon){
     if (pokemon.id < 10) {
         return `00${pokemon.id}`
     } else if (pokemon.id > 9 && pokemon.id < 100) {
         return `0${pokemon.id}`
+    } else if (pokemon.id >99 && pokemon.id < 810) {
+        return `${pokemon.id}`
     }
+    return `pokeball`
+}
+
+function Pokemon(name, height, weight, abilities, moves){
+        this.name = name
+        this.height = height
+        this.weight = weight
+        this.abilities = abilities
+    this.id=900
+    this.moves = moves
 }
 
 
-loadPage()
+

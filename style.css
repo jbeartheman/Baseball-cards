@@ -46,6 +46,7 @@ header {
   
   .card__face--back {
     background: blue;
+    color: white;
     transform: rotateY(180deg);
   }
   .card.is-flipped {
