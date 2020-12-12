@@ -10,7 +10,7 @@ async function getAPIData(url)  {
 
 // now, use the asynce getAPIdata function
 
-function loadPage(data){
+function loadPage(){
     getAPIData('https://pokeapi.co/api/v2/pokemon').then
     (async (data) => { 
         for (const pokemon of data.results) {
