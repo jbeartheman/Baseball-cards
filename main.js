@@ -24,7 +24,7 @@ function loadPage(){
 
 
 const pokeGrid = document.querySelector('.pokemonGrid')
-const loadButton = document.querySelector('.load')
+const loadButton = document.querySelector('button')
 const newPokemonButton = document.querySelector('.newPokemon')
 
 newPokemonButton.addEventListener('click', () => {
