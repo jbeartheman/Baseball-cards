@@ -35,7 +35,6 @@ newPokemonButton.addEventListener('click', () => {
 
 loadButton.addEventListener('click', () => {
     loadPage()
-    loadButton.disabled= true
 })
 
 function populatePokeCard(singlePokemon){
