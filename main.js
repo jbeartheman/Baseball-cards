@@ -36,7 +36,7 @@ function populatePokeCard(singlePokemon){
     let frontLabel = document.createElement('p')
     frontLabel.textContent = singlePokemon.name
     let frontImage = document.createElement('img')
-    frontImage.src = `../images/pokemon/00${getImageFileName(singlePokemon)}.png`
+    frontImage.src = `../images/pokemon/${getImageFileName(singlePokemon)}.png`
 
     pokeFront.appendChild(frontImage)
     pokeFront.appendChild(frontLabel)
