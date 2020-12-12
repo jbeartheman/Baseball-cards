@@ -46,4 +46,4 @@ function populatePokeCard(singlePokemon){
 
 
 
-loadData()
+loadPage()
