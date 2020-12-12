@@ -93,17 +93,8 @@ function getImageFileName(pokemon){
     } else if (pokemon.id >99 && pokemon.id < 810) {
         return `${pokemon.id}`
     }
-    return `pokeball`
 }
 
-function Pokemon(name, height, weight, abilities, moves){
-        this.name = name
-        this.height = height
-        this.weight = weight
-        this.abilities = abilities
-    this.id=900
-    this.moves = moves
-}
 
 
 
