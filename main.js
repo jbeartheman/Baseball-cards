@@ -11,7 +11,7 @@ async function getAPIData(url)  {
 // now, use the asynce getAPIdata function
 
 function loadPage(){
-    getAPIData('https://pokeapi.co/api/v2/pokemon').then
+    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then
     async (data) => { 
         for (const pokemon of data.results) {
             await getAPIData(pokemon.url).then((pokeData) => {
@@ -24,16 +24,18 @@ function loadPage(){
 
 
 const pokeGrid = document.querySelector('.pokemonGrid')
-//const loadButton = document.querySelector('button')
-//const newPokemonButton = document.querySelector('.newPokemon')
+const loadButton = document.querySelector('.load')
+const newPokemonButton = document.querySelector('.newPokemon')
 
-//newPokemonButton.addEventListener('click', () => {
-   // let pokeName = prompt('What is your new Pokemon Name?')
-   // let newPokemon = new Pokemon(pokeName, 400, 200, ['stump', 'sleep', 'yeet'])
-   // populatePokeCard(newPokemon)
-//})
+newPokemonButton.addEventListener('click', () => {
+    let pokeName = prompt('What is your new Pokemon Name?')
+    let newPokemon = new Pokemon(pokeName, 400, 200, ['stump', 'sleep', 'yeet'])
+    populatePokeCard(newPokemon)
+})
 
-
+loadButton.addEventListener('click', () => {
+    loadPage()
+})
 
 function populatePokeCard(singlePokemon){
     let pokeScene = document.createElement('div')
@@ -93,7 +95,14 @@ function getImageFileName(pokemon){
     return `pokeball`
 }
 
-
+function Pokemon(name, height, weight, abilities, moves){
+        this.name = name
+        this.height = height
+        this.weight = weight
+        this.abilities = abilities
+    this.id=900
+    this.moves = moves
+}
 
 
 
