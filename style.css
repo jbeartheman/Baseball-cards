@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 
 .pokemonGrid{
     display: flex;
@@ -10,4 +16,9 @@
     border: 1px solid rgb(207, 9, 9);
     margin: 10px; 
     perspective: 600px;
+  }
+
+  .frontImage{
+      height: 200px;
+      width: 200px;
   }
