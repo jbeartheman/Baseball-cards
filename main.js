@@ -1,23 +1,54 @@
-const starGrid = document.querySelector('.starGrid')
-
-
-async function loadData(){
-    const response = await fetch('https://swapi.dev/api/people/')
-    const data = await response.json()
-    populateStarPage(data)
-}
-
-function populateStarPage(data){
-    const allPeople = data.results
-    for ( const people of allPeople){
-    let starCard = document.createElement('div')
-    starCard.className= 'starCard'
-    let starName = document.createElement('h3')
-    starName.textContent = people.starName
-
-    starCard.appendChild(starName)
-    starGrid.appendChild(starCard)
+async function getAPIData(url){
+    try {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+    } catch(error) {
+        console.error(error)
     }
+    
 }
 
-loadData()
+// now, use the asynce getAPIdata function
+
+function loadPage(data){
+    getAPIData('https://swapi.dev/api/people').then
+    (async (data) => { 
+        for (const people of data.results) {
+            await getAPIData(people.url).then((starData) => {
+            popluateStarCard(starData)
+            })
+            
+        }
+    })
+
+}
+
+
+const starGrid = document.querySelector('.starWarsGrid')
+
+function popluateStarCard(singlePerson){
+    let starScene = document.createElement('div')
+    starScene.classname = 'scene'
+    let starCard = document.createElement('div')
+    starCard.classname = 'card'
+    let starFront = document.createElement('div')
+    let starBack = document.createElement('div')
+
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = singlePerson.name
+
+
+    starFront.appendChild(frontLabel)
+    starCard.appendChild(starFront)
+    starCard.appendChild(starBack)
+    starScene.appendChild(starCard)
+    starGrid.appendChild(starScene)
+}
+
+
+
+
+
+
+loadPage()

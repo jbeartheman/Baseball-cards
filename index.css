@@ -1,20 +1,13 @@
-* {
-    margin: 0px;
-    box-sizing: border-box;
-}
-
-main {
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
 
 .starGrid{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-}
-.starCard{
     
 }
+.scene {
+    width: 200px;
+    height: 260px;
+    border: 1px solid #CCC;
+    margin: 10px;
+    perspective: 600px;
+  }
