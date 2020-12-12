@@ -23,7 +23,7 @@ function loadPage(){
 }
 
 
-const pokeGrid = document.querySelector('.pokewarsGrid')
+const pokeGrid = document.querySelector('.pokemonGrid')
 
 function populatePokeCard(singlePokemon){
     let pokeScene = document.createElement('div')
