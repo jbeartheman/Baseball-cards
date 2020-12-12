@@ -1,33 +1,23 @@
-import { films } from './data/films.js'
-import { people } from './data/people.js'
-
-const main = document.querySelector('main')
+const starGrid = document.querySelector('.starGrid')
 
 
-
-/*people.forEach(person => {
-    console.log(person.name)
-    let personImg = document.createElement('img')
-    personImg.src = "https://starwars-visualguide.com/assets/img/characters/1.jpg"
-    main.appendChild(personImg)
-})
-*/
-
-for (let i = 0; i < 25; i++){
-    let figure = document.createElement('.card')
-    let figImg = document.createElement('img')
-    figImg.src = 'https://starwars-visualguide.com/assets/img/characters/' + (i + 1) + '.jpg'
-    let figCaption = document.createElement('figcaption')
-    figCaption.textContent = people[i].name
-
-    figure.appendChild(figImg)
-    figure.appendChild(figCaption)
-
-    main.appendChild(figure)
-    
+async function loadData(){
+    const response = await fetch('https://swapi.dev/api/people/')
+    const data = await response.json()
+    populateStarPage(data)
 }
 
-var card = document.querySelector('.card');
-card.addEventListener( 'click', function() {
-  card.classList.toggle('is-flipped');
-});
+function populateStarPage(data){
+    const allPeople = data.results
+    for ( const people of allPeople){
+    let starCard = document.createElement('div')
+    starCard.className= 'starCard'
+    let starName = document.createElement('h3')
+    starName.textContent = people.starName
+
+    starCard.appendChild(starName)
+    starGrid.appendChild(starCard)
+    }
+}
+
+loadData()
