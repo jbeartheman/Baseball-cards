@@ -9,7 +9,7 @@ header {
     flex-direction: column;
     align-items: center;
 }
-.starGrid{
+.pokeGrid{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
