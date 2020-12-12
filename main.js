@@ -24,14 +24,14 @@ function loadPage(){
 
 
 const pokeGrid = document.querySelector('.pokemonGrid')
-const loadButton = document.querySelector('button')
-const newPokemonButton = document.querySelector('.newPokemon')
+//const loadButton = document.querySelector('button')
+//const newPokemonButton = document.querySelector('.newPokemon')
 
-newPokemonButton.addEventListener('click', () => {
-    let pokeName = prompt('What is your new Pokemon Name?')
-    let newPokemon = new Pokemon(pokeName, 400, 200, ['stump', 'sleep', 'yeet'])
-    populatePokeCard(newPokemon)
-})
+//newPokemonButton.addEventListener('click', () => {
+   // let pokeName = prompt('What is your new Pokemon Name?')
+   // let newPokemon = new Pokemon(pokeName, 400, 200, ['stump', 'sleep', 'yeet'])
+   // populatePokeCard(newPokemon)
+//})
 
 
 
