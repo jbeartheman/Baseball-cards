@@ -33,9 +33,7 @@ newPokemonButton.addEventListener('click', () => {
     populatePokeCard(newPokemon)
 })
 
-loadButton.addEventListener('click', () => {
-    loadPage()
-})
+
 
 function populatePokeCard(singlePokemon){
     let pokeScene = document.createElement('div')
