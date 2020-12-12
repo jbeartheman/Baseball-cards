@@ -1,12 +1,11 @@
-async function getAPIData(url){
+async function getAPIData(url)  {
     try {
         const response = await fetch(url)
         const data = await response.json()
         return data
-    } catch(error) {
+    } catch (error) {
         console.error(error)
     }
-    
 }
 
 // now, use the asynce getAPIdata function
@@ -16,18 +15,17 @@ function loadPage(data){
     (async (data) => { 
         for (const people of data.results) {
             await getAPIData(people.url).then((starData) => {
-            popluateStarCard(starData)
+                populateStarCard(starData)
             })
             
         }
     })
-
 }
 
 
 const starGrid = document.querySelector('.starWarsGrid')
 
-function popluateStarCard(singlePerson){
+function populateStarCard(singlePerson){
     let starScene = document.createElement('div')
     starScene.classname = 'scene'
     let starCard = document.createElement('div')
