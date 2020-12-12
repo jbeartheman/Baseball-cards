@@ -56,4 +56,4 @@ function loadData(){
 }
 
 
-loadPage()
+loadData()
