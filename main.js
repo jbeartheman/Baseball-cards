@@ -34,14 +34,6 @@ function populatePokeCard(singlePokemon){
     pokeCard.addEventListener( 'click', function() {
         pokeCard.classList.toggle('is-flipped')
         })
-    
-    let pokeBack = document.createElement('div')
-    pokeBack.className = 'card_face'
-    
-
-    let backLabel = document.createElement('p')
-    backLabel.textContent = `${singlePokemon.moves.length} moves`
-    
     pokeCard.appendChild(populateCardFront(singlePokemon))
     pokeCard.appendChild(populateCardBack(singlePokemon))
     pokeScene.appendChild(pokeCard)
