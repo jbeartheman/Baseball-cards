@@ -1,4 +1,4 @@
-async function getAPIData(url)  {
+/*async function getAPIData(url)  {
     try {
         const response = await fetch(url)
         const data = await response.json()
@@ -23,7 +23,7 @@ function loadPage(data){
 }
 
 
-const starGrid = document.querySelector('.starWarsGrid')
+const starGrid = document.querySelector('.starwarsGrid')
 
 function populateStarCard(singlePerson){
     let starScene = document.createElement('div')
@@ -43,10 +43,17 @@ function populateStarCard(singlePerson){
     starScene.appendChild(starCard)
     starGrid.appendChild(starScene)
 }
+*/
+
+const starGrid = document.querySelector('.starwarsGrid')
 
 
+function loadData(){
+    fetch('https://swapi.dev/api/people/1')
+    .then(response => response.json())
+    .then(data => console.log(data));
 
-
+}
 
 
 loadPage()
