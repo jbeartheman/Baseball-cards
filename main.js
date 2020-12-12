@@ -27,9 +27,9 @@ const pokeGrid = document.querySelector('.pokemonGrid')
 
 function populatePokeCard(singlePokemon){
     let pokeScene = document.createElement('div')
-    pokeScene.classname = 'scene'
+    pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
-    pokeCard.classname = 'card'
+    pokeCard.className = 'card'
     let pokeFront = document.createElement('div')
     let pokeBack = document.createElement('div')
 
