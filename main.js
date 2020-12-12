@@ -107,3 +107,4 @@ function Pokemon(name, height, weight, abilities, moves){
 
 
 
+loadPage()
