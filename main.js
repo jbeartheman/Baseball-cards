@@ -42,7 +42,7 @@ function populatePokeCard(singlePokemon){
 
 function populateCardFront(pokemon) {
     let pokeFront = document.createElement('div')
-    pokeFront.className = 'card_face card__face--front'
+    pokeFront.className = 'card__face card__face--front'
     let frontLabel = document.createElement('p')
     frontLabel.textContent = pokemon.name
     let frontImage = document.createElement('img')
@@ -54,7 +54,7 @@ function populateCardFront(pokemon) {
 
 function populateCardBack(pokemon){
     let pokeBack = document.createElement('div')
-    pokeBack.className = 'card_face card__face--back'
+    pokeBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
     backLabel.textContent = `${pokemon.moves.length} moves`
     pokeBack.appendChild(backLabel)
