@@ -46,7 +46,11 @@ function populatePokeCard(singlePokemon){
     pokeGrid.appendChild(pokeScene)
 }
 
-
+function getImageFileName(pokemon){
+    if (pokemon.id < 10) {
+        return `00${pokemon.id}`
+    }
+}
 
 
 loadPage()
