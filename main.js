@@ -93,14 +93,7 @@ function getImageFileName(pokemon){
     return `pokeball`
 }
 
-function Pokemon(name, height, weight, abilities, moves){
-        this.name = name
-        this.height = height
-        this.weight = weight
-        this.abilities = abilities
-    this.id=900
-    this.moves = moves
-}
+
 
 
 
